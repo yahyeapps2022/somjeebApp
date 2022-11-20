@@ -3,14 +3,14 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
+class ReceivedMoneyWidget extends StatefulWidget {
+  const ReceivedMoneyWidget({Key? key}) : super(key: key);
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _ReceivedMoneyWidgetState createState() => _ReceivedMoneyWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _ReceivedMoneyWidgetState extends State<ReceivedMoneyWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -24,9 +24,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         title: Text(
           'Page Title',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Poppins',
+                fontFamily: FlutterFlowTheme.of(context).title2Family,
                 color: Colors.white,
                 fontSize: 22,
+                useGoogleFonts: GoogleFonts.asMap()
+                    .containsKey(FlutterFlowTheme.of(context).title2Family),
               ),
         ),
         actions: [],

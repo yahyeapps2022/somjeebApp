@@ -12,7 +12,6 @@ import '../main.dart';
 
 import 'lat_lng.dart';
 
-export 'keep_alive_wrapper.dart';
 export 'lat_lng.dart';
 export 'place.dart';
 export 'dart:math' show min, max;
@@ -155,6 +154,10 @@ dynamic getJsonField(
 bool get isAndroid => !kIsWeb && Platform.isAndroid;
 bool get isiOS => !kIsWeb && Platform.isIOS;
 bool get isWeb => kIsWeb;
+
+const kMobileWidthCutoff = 479.0;
+bool isMobileWidth(BuildContext context) =>
+    MediaQuery.of(context).size.width < kMobileWidthCutoff;
 bool responsiveVisibility({
   required BuildContext context,
   bool phone = true,
@@ -163,7 +166,7 @@ bool responsiveVisibility({
   bool desktop = true,
 }) {
   final width = MediaQuery.of(context).size.width;
-  if (width < 479) {
+  if (width < kMobileWidthCutoff) {
     return phone;
   } else if (width < 767) {
     return tablet;
@@ -178,7 +181,7 @@ const kTextValidatorUsernameRegex = r'^[a-zA-Z][a-zA-Z0-9_-]{2,16}$';
 const kTextValidatorEmailRegex =
     r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$";
 const kTextValidatorWebsiteRegex =
-    r'(https?:\/\/)?(www\.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)|(https?:\/\/)?(www\.)?(?!ww)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)';
+    r'(https?:\/\/)?(www\.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,10}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)|(https?:\/\/)?(www\.)?(?!ww)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,10}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)';
 
 void setAppLanguage(BuildContext context, String language) =>
     MyApp.of(context).setLocale(language);

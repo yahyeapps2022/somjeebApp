@@ -68,23 +68,53 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? DashboardWidget() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomePageWidget() : LoginWidget(),
+              appStateNotifier.loggedIn ? DashboardWidget() : LoginWidget(),
           routes: [
-            FFRoute(
-              name: 'HomePage',
-              path: 'homePage',
-              builder: (context, params) => HomePageWidget(),
-            ),
             FFRoute(
               name: 'login',
               path: 'login',
               builder: (context, params) => LoginWidget(),
+            ),
+            FFRoute(
+              name: 'sent_money',
+              path: 'sentMoney',
+              builder: (context, params) => SentMoneyWidget(),
+            ),
+            FFRoute(
+              name: 'search_result',
+              path: 'searchResult',
+              builder: (context, params) => SearchResultWidget(),
+            ),
+            FFRoute(
+              name: 'received_money',
+              path: 'receivedMoney',
+              builder: (context, params) => ReceivedMoneyWidget(),
+            ),
+            FFRoute(
+              name: 'totals_per_day',
+              path: 'totalsPerDay',
+              builder: (context, params) => TotalsPerDayWidget(),
+            ),
+            FFRoute(
+              name: 'report_pages',
+              path: 'reportPages',
+              builder: (context, params) => ReportPagesWidget(),
+            ),
+            FFRoute(
+              name: 'number_account_page',
+              path: 'numberAccountPage',
+              builder: (context, params) => NumberAccountPageWidget(),
+            ),
+            FFRoute(
+              name: 'dashboard',
+              path: 'dashboard',
+              builder: (context, params) => DashboardWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
@@ -260,13 +290,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: CircularProgressIndicator(
-                      color: FlutterFlowTheme.of(context).primaryColor,
-                    ),
+              ? Container(
+                  color: Colors.white,
+                  child: Image.asset(
+                    'assets/images/Group_1.png',
+                    fit: BoxFit.cover,
                   ),
                 )
               : page;

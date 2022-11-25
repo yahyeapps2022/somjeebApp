@@ -123,6 +123,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'number_account',
               path: 'numberAccount',
               builder: (context, params) => NumberAccountWidget(),
+            ),
+            FFRoute(
+              name: 'sms_permission_request',
+              path: 'smsPermissionRequest',
+              builder: (context, params) => SmsPermissionRequestWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

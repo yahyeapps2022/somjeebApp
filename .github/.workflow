@@ -1,6 +1,6 @@
 name: CI
 on:
-  pull_request:
+  push_request:
     branches:
       - flutterflow
 

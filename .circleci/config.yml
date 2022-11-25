@@ -4,9 +4,11 @@ jobs:
     docker:
       - image: circleci/flutter
     steps:
-       - checkout
-       - run: flutter clean 
-       - run: flutter packages pub run build_runner build --delete-conflicting-outputs
-       - run: 
-       - store_artifacts:
+      - checkout
+      - run: flutter clean 
+      - run: flutter packages pub run build_runner build --delete-conflicting-outputs
+      - run: 
+      - store_artifacts:
           path: build/app/outputs/flutter-apk/app-release.apk
+
+

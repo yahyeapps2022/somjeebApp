@@ -1,8 +1,8 @@
 name: CI
 on:
-  push_request:
+  pull_request:
     branches:
-      - flutterflow
+      - main
 
 jobs:
   flutter_test:

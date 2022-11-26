@@ -28,7 +28,7 @@ void main() async {
       '[-EVCPlus-] You have paid  \$2000.5 to SAxaaba modern Pharma(600399),Tel: +252613405050, at 21/11/22 22:27:28, Your Balance is \$38.01.',
       '22/11/22 ');
   var received = s.readImbox(
-      '[-EVCPlus-] \$40 Received from 0611381010 at 21/11/22 19:51:38, Your balance is \$42.01',
+      '[-EVCPlus-] \$1000 Received from 0611381010 at 21/11/22 19:51:38, Your balance is \$42.01',
       '21/11/22 19:51:38');
 
   var recharged = s.readImbox(

@@ -1,0 +1,331 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mycompany.somjeeb"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:4:4-65
+14-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:4:21-63
+15    <uses-permission android:name="android.permission.READ_SMS" />
+15-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-67
+15-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-64
+16    <uses-permission android:name="android.permission.SEND_SMS" />
+16-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-67
+16-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-64
+17    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+17-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-70
+17-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-67
+18    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+18-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-75
+18-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:10:22-72
+19    <uses-permission android:name="android.permission.READ_CONTACTS" />
+19-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-72
+19-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-69
+20    <uses-permission android:name="android.permission.READ_PROFILE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+20-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-71
+20-->[:sms_advanced] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/sms_advanced/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-68
+21    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+22-->[com.google.firebase:firebase-firestore:24.1.2] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/465442b46bd48efbe0d836964cda2b3d/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:13:5-79
+22-->[com.google.firebase:firebase-firestore:24.1.2] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/465442b46bd48efbe0d836964cda2b3d/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:13:22-76
+23
+24    <application
+24-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:7:4-61:19
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.6.0] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/e5d1e7e90d2ece3ba67c1fd95c9d8dc7/core-1.6.0/AndroidManifest.xml:24:18-86
+26        android:debuggable="true"
+27        android:icon="@mipmap/ic_launcher"
+27-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:10:9-43
+28        android:label="somjeeb"
+28-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:8:9-32
+29        android:requestLegacyExternalStorage="true" >
+29-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:11:9-52
+30        <activity
+30-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:13:9-51:20
+31            android:name="com.mycompany.somjeeb.MainActivity"
+31-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:14:13-41
+32            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+32-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:18:13-163
+33            android:exported="true"
+33-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:15:13-36
+34            android:hardwareAccelerated="true"
+34-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:19:13-47
+35            android:launchMode="singleTop"
+35-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:16:13-43
+36            android:theme="@style/LaunchTheme"
+36-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:17:13-47
+37            android:windowSoftInputMode="adjustResize" >
+37-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:20:13-55
+38
+39            <!--
+40                 Specifies an Android theme to apply to this Activity as soon as
+41                 the Android process has started. This theme is visible to the user
+42                 while the Flutter UI initializes. After that, this theme continues
+43                 to determine the Window background behind the Flutter UI.
+44            -->
+45            <meta-data
+45-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:25:13-28:17
+46                android:name="io.flutter.embedding.android.NormalTheme"
+46-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:26:15-70
+47                android:resource="@style/NormalTheme" />
+47-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:27:15-52
+48            <!--
+49                 Displays an Android View that continues showing the launch screen
+50                 Drawable until Flutter paints its first frame, then this splash
+51                 screen fades out. A splash screen is useful to avoid any visual
+52                 gap between the end of Android's launch screen and the painting of
+53                 Flutter's first frame.
+54            -->
+55            <meta-data
+55-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:34:13-37:17
+56                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+56-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:35:15-79
+57                android:resource="@drawable/launch_background" />
+57-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:36:15-61
+58
+59            <intent-filter>
+59-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:38:13-41:29
+60                <action android:name="android.intent.action.MAIN" />
+60-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:39:17-68
+60-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:39:25-66
+61
+62                <category android:name="android.intent.category.LAUNCHER" />
+62-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:40:17-76
+62-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:40:27-74
+63            </intent-filter>
+64            <!-- Deep linking -->
+65            <meta-data
+65-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:43:13-90
+66                android:name="flutter_deeplinking_enabled"
+66-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:43:24-66
+67                android:value="true" />
+67-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:43:67-87
+68
+69            <intent-filter android:autoVerify="true" >
+69-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:44:13-49:29
+69-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:44:28-53
+70                <action android:name="android.intent.action.VIEW" />
+70-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:45:17-69
+70-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:45:25-66
+71
+72                <category android:name="android.intent.category.DEFAULT" />
+72-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:46:17-76
+72-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:46:27-73
+73                <category android:name="android.intent.category.BROWSABLE" />
+73-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:47:17-78
+73-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:47:27-75
+74
+75                <data
+75-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:17-77
+76                    android:host="somjeeb.com"
+76-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:48-74
+77                    android:scheme="somjeeb" />
+77-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:23-47
+78            </intent-filter>
+79        </activity>
+80
+81        <!--
+82             Don't delete the meta-data below.
+83             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+84        -->
+85        <meta-data
+85-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:55:9-57:33
+86            android:name="flutterEmbedding"
+86-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:56:13-44
+87            android:value="2" />
+87-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:57:13-30
+88
+89        <activity
+89-->[:url_launcher_android] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+90            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+90-->[:url_launcher_android] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+91            android:exported="false"
+91-->[:url_launcher_android] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+92            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+92-->[:url_launcher_android] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+93
+94        <service
+94-->[:cloud_firestore] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+95            android:name="com.google.firebase.components.ComponentDiscoveryService"
+95-->[:cloud_firestore] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
+96            android:directBootAware="true"
+96-->[com.google.firebase:firebase-common:20.1.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/3302b5bdf875b4766d75912a91b77dbc/jetified-firebase-common-20.1.1/AndroidManifest.xml:35:13-43
+97            android:exported="false" >
+97-->[com.google.firebase:firebase-firestore:24.1.2] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/465442b46bd48efbe0d836964cda2b3d/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:19:13-37
+98            <meta-data
+98-->[:cloud_firestore] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+99                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+99-->[:cloud_firestore] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-134
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[:cloud_firestore] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+101            <meta-data
+101-->[:firebase_auth] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+102                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+102-->[:firebase_auth] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[:firebase_auth] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+104            <meta-data
+104-->[:firebase_core] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+105                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+105-->[:firebase_core] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[:firebase_core] /home/yahyeapps-com/projects/apps/somjeebApp/web/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+107            <meta-data
+107-->[com.google.firebase:firebase-firestore:24.1.2] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/465442b46bd48efbe0d836964cda2b3d/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:20:13-22:85
+108                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+108-->[com.google.firebase:firebase-firestore:24.1.2] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/465442b46bd48efbe0d836964cda2b3d/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:21:17-111
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[com.google.firebase:firebase-firestore:24.1.2] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/465442b46bd48efbe0d836964cda2b3d/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:22:17-82
+110            <meta-data
+110-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:67:13-69:85
+111                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+111-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:68:17-109
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:69:17-82
+113        </service>
+114
+115        <uses-library
+115-->[androidx.window:window:1.0.0-beta04] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/a25ea3574c356bcb82d60d309cf24b13/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+116            android:name="androidx.window.extensions"
+116-->[androidx.window:window:1.0.0-beta04] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/a25ea3574c356bcb82d60d309cf24b13/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+117            android:required="false" />
+117-->[androidx.window:window:1.0.0-beta04] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/a25ea3574c356bcb82d60d309cf24b13/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+118        <uses-library
+118-->[androidx.window:window:1.0.0-beta04] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/a25ea3574c356bcb82d60d309cf24b13/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+119            android:name="androidx.window.sidecar"
+119-->[androidx.window:window:1.0.0-beta04] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/a25ea3574c356bcb82d60d309cf24b13/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+120            android:required="false" />
+120-->[androidx.window:window:1.0.0-beta04] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/a25ea3574c356bcb82d60d309cf24b13/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+121
+122        <activity
+122-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:23:9-27:75
+123            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+123-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:24:13-93
+124            android:excludeFromRecents="true"
+124-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:25:13-46
+125            android:exported="false"
+125-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:26:13-37
+126            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+126-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:27:13-72
+127        <!--
+128            Service handling Google Sign-In user revocation. For apps that do not integrate with
+129            Google Sign-In, this service will never be started.
+130        -->
+131        <service
+131-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:33:9-37:51
+132            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+132-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:34:13-89
+133            android:exported="true"
+133-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:35:13-36
+134            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+134-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:36:13-107
+135            android:visibleToInstantApps="true" />
+135-->[com.google.android.gms:play-services-auth:20.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/85d0c28969bce7a18ab1c413bb3e290d/jetified-play-services-auth-20.0.1/AndroidManifest.xml:37:13-48
+136
+137        <activity
+137-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:27:9-44:20
+138            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+138-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:28:13-80
+139            android:excludeFromRecents="true"
+139-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:29:13-46
+140            android:exported="true"
+140-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:30:13-36
+141            android:launchMode="singleTask"
+141-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:31:13-44
+142            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+142-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:32:13-72
+143            <intent-filter>
+143-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:33:13-43:29
+144                <action android:name="android.intent.action.VIEW" />
+144-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:45:17-69
+144-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:45:25-66
+145
+146                <category android:name="android.intent.category.DEFAULT" />
+146-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:46:17-76
+146-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:46:27-73
+147                <category android:name="android.intent.category.BROWSABLE" />
+147-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:47:17-78
+147-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:47:27-75
+148
+149                <data
+149-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:17-77
+150                    android:host="firebase.auth"
+150-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:48-74
+151                    android:path="/"
+152                    android:scheme="genericidp" />
+152-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:23-47
+153            </intent-filter>
+154        </activity>
+155        <activity
+155-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:45:9-62:20
+156            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+156-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:46:13-79
+157            android:excludeFromRecents="true"
+157-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:47:13-46
+158            android:exported="true"
+158-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:48:13-36
+159            android:launchMode="singleTask"
+159-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:49:13-44
+160            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+160-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:50:13-72
+161            <intent-filter>
+161-->[com.google.firebase:firebase-auth:21.0.5] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/94205d70217cac0790cd58cf0bb71d9b/jetified-firebase-auth-21.0.5/AndroidManifest.xml:51:13-61:29
+162                <action android:name="android.intent.action.VIEW" />
+162-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:45:17-69
+162-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:45:25-66
+163
+164                <category android:name="android.intent.category.DEFAULT" />
+164-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:46:17-76
+164-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:46:27-73
+165                <category android:name="android.intent.category.BROWSABLE" />
+165-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:47:17-78
+165-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:47:27-75
+166
+167                <data
+167-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:17-77
+168                    android:host="firebase.auth"
+168-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:48-74
+169                    android:path="/"
+170                    android:scheme="recaptcha" />
+170-->/home/yahyeapps-com/projects/apps/somjeebApp/web/android/app/src/main/AndroidManifest.xml:48:23-47
+171            </intent-filter>
+172        </activity>
+173        <activity
+173-->[com.google.android.gms:play-services-base:18.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/ebbd9a53788da8400adee4cb09e10d24/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+174            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+174-->[com.google.android.gms:play-services-base:18.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/ebbd9a53788da8400adee4cb09e10d24/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+175            android:exported="false"
+175-->[com.google.android.gms:play-services-base:18.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/ebbd9a53788da8400adee4cb09e10d24/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+176            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+176-->[com.google.android.gms:play-services-base:18.0.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/ebbd9a53788da8400adee4cb09e10d24/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+177
+178        <provider
+178-->[com.google.firebase:firebase-common:20.1.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/3302b5bdf875b4766d75912a91b77dbc/jetified-firebase-common-20.1.1/AndroidManifest.xml:26:9-31:39
+179            android:name="com.google.firebase.provider.FirebaseInitProvider"
+179-->[com.google.firebase:firebase-common:20.1.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/3302b5bdf875b4766d75912a91b77dbc/jetified-firebase-common-20.1.1/AndroidManifest.xml:27:13-77
+180            android:authorities="com.mycompany.somjeeb.firebaseinitprovider"
+180-->[com.google.firebase:firebase-common:20.1.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/3302b5bdf875b4766d75912a91b77dbc/jetified-firebase-common-20.1.1/AndroidManifest.xml:28:13-72
+181            android:directBootAware="true"
+181-->[com.google.firebase:firebase-common:20.1.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/3302b5bdf875b4766d75912a91b77dbc/jetified-firebase-common-20.1.1/AndroidManifest.xml:29:13-43
+182            android:exported="false"
+182-->[com.google.firebase:firebase-common:20.1.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/3302b5bdf875b4766d75912a91b77dbc/jetified-firebase-common-20.1.1/AndroidManifest.xml:30:13-37
+183            android:initOrder="100" />
+183-->[com.google.firebase:firebase-common:20.1.1] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/3302b5bdf875b4766d75912a91b77dbc/jetified-firebase-common-20.1.1/AndroidManifest.xml:31:13-36
+184
+185        <meta-data
+185-->[com.google.android.gms:play-services-basement:18.0.0] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/cd550ad6307163ff51e667ab244d61a4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+186            android:name="com.google.android.gms.version"
+186-->[com.google.android.gms:play-services-basement:18.0.0] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/cd550ad6307163ff51e667ab244d61a4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+187            android:value="@integer/google_play_services_version" />
+187-->[com.google.android.gms:play-services-basement:18.0.0] /home/yahyeapps-com/.gradle/caches/transforms-2/files-2.1/cd550ad6307163ff51e667ab244d61a4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+188    </application>
+189
+190</manifest>

@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sms_advanced/sms_advanced.dart';
+//import 'package:sms_advanced/sms_advanced.dart';
 
 class AutoCreateTrans {
   final String? uid =
@@ -10,6 +10,8 @@ class AutoCreateTrans {
   // collection reference
   final CollectionReference transCollection =
       FirebaseFirestore.instance.collection('transactions');
+  final CollectionReference unsavedCollection =
+      FirebaseFirestore.instance.collection('unsaved_transactions');
 
   Future<void> saveTrans(
       {String type = '',
@@ -26,20 +28,20 @@ class AutoCreateTrans {
           'mobile': mobile,
           'date': date,
           'color': color,
-          'service_name': serviceName,
+          'serviceName': serviceName,
           'sms': sms,
           'uid': "/users/$uid",
           'status': ''
         })
         .then((value) => print(" Added"))
-        .catchError((error) => print("Failed to add : $error"));
+        .catchError((error) => print("Failed to add "));
   }
 
   Future<void> unsaved({String sms = '', SmsDate}) async {
-    return await transCollection
+    return await unsavedCollection
         .add({'sms': sms, 'uid': "/users/$uid", 'smsDate': SmsDate})
         .then((value) => print(" Added"))
-        .catchError((error) => print("Failed to add : $error"));
+        .catchError((error) => print("Failed to add "));
   }
 
   bool validated(amount, date) {
@@ -86,6 +88,7 @@ class AutoCreateTrans {
       dynamic serviceName = me[0];
       // then save to firestore
       if (validated(amount, date)) {
+        print('is transfered');
         saveTrans(
             amount: amount,
             mobile: mobile,
@@ -187,6 +190,7 @@ class AutoCreateTrans {
 // only run when the app is lounched
   readImbox(currentSms, smsDate) async {
     if (currentSms.contains('EVCPlus')) {
+      print('is evc');
       final snapShot = await transCollection
           .where('sms', isEqualTo: currentSms)
           .where('uid', isEqualTo: "/users/$uid")
@@ -199,14 +203,14 @@ class AutoCreateTrans {
   }
 
   readImboxSms() async {
-    SmsQuery query = new SmsQuery();
+    /*   SmsQuery query = new SmsQuery();
     List<SmsMessage> messages =
         await query.querySms(kinds: [SmsQueryKind.Inbox]);
-    print(messages);
+    print(messages); */
   }
 
   smsListen() {
-    SmsReceiver receiver = new SmsReceiver();
-    receiver.onSmsReceived?.listen((SmsMessage msg) => print(msg));
+    /*   SmsReceiver receiver = new SmsReceiver();
+    receiver.onSmsReceived?.listen((SmsMessage msg) => print(msg));*/
   }
 }

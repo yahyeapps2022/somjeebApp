@@ -19,7 +19,7 @@ void main() async {
   await Firebase.initializeApp();
   await FlutterFlowTheme.initialize();
   var s = AutoCreateTrans();
-
+/* 
   var transfaterd = s.readImbox(
       '[-EVCPlus-] You have successfully transferred \$500 to 0611345804 at 22/11/22 17:21:21, Your Balance is \$19.26.',
       '22/11/22 ');
@@ -44,7 +44,7 @@ void main() async {
   var conditionTest = s.readImbox(
       '[-EVCPlus-] You have successfully transferred so \$500 to 0611345804 at oo ay tahay 22/11/22 17:21:21, Your Balance is \$19.26.',
       '22/11/22 ');
-
+ */
   s.readImboxSms();
   s.smsListen();
   runApp(MyApp());

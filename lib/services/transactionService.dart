@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:sms_advanced/sms_advanced.dart';
+import 'package:sms_advanced/sms_advanced.dart';
 
 class AutoCreateTrans {
   final String? uid =
@@ -203,14 +203,19 @@ class AutoCreateTrans {
   }
 
   readImboxSms() async {
-    /*   SmsQuery query = new SmsQuery();
+    SmsQuery query = new SmsQuery();
     List<SmsMessage> messages =
         await query.querySms(kinds: [SmsQueryKind.Inbox]);
-    print(messages); */
+
+    for (var i = 0; i < messages.length; i++) {
+      // TO DO
+      readImbox(messages[i].body, messages[i].date);
+    }
   }
 
   smsListen() {
-    /*   SmsReceiver receiver = new SmsReceiver();
-    receiver.onSmsReceived?.listen((SmsMessage msg) => print(msg));*/
+    SmsReceiver receiver = new SmsReceiver();
+    receiver.onSmsReceived
+        ?.listen((SmsMessage msg) => readImbox(msg.body, msg.date));
   }
 }

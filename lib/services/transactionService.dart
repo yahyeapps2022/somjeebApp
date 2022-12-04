@@ -73,6 +73,16 @@ class AutoCreateTrans {
     return double.tryParse(s) != null;
   }
 
+  bool isOtherTelecom(sms) {
+    if (sms.contains('Sahal') ||
+        sms.contains('Telesom') ||
+        sms.contains("Somnet Telecom")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   forEvcPlus(sms, smsDate) {
     List<String> types = ['recharged', 'transferred', 'paid', 'Received'];
 
@@ -125,9 +135,51 @@ class AutoCreateTrans {
         // unsaved transactions collections
         unsaved(sms: sms, SmsDate: smsDate);
       }
+    } else if (sms.contains('received from') && sms.contains('TAWAKAL')) {
+      // recieved from tawakal
+      dynamic me = sms.split(" ");
+      dynamic amount = me[1].replaceAll(',', '').replaceAll('\$', '');
+      dynamic mobile = me[5].split("(")[1].split(",")[0].replaceAll(')', '');
+      dynamic date = getFormatedDate(me[5].split(",")[1] + ' ' + me[6]);
+      String type = 'Received';
+      dynamic serviceName = me[0];
+
+      if (validated(amount, date)) {
+        saveTrans(
+            amount: amount,
+            mobile: mobile,
+            color: '#006600',
+            date: date,
+            type: type,
+            serviceName: serviceName,
+            sms: sms);
+      } else {
+        // unsaved transactions collections
+        unsaved(sms: sms, SmsDate: smsDate);
+      }
+    } else if (sms.contains('received from') && isOtherTelecom(sms)) {
+      // recieved from sahal,telsom,somnet
+      dynamic me = sms.split(" ");
+      dynamic amount = me[1].replaceAll(',', '').replaceAll('\$', '');
+      dynamic mobile = me[6].split("(")[1].split(",")[0].replaceAll(')', '');
+      dynamic date = getFormatedDate(me[6].split(",")[1] + ' ' + me[7]);
+      String type = 'Received';
+      dynamic serviceName = me[0];
+      if (validated(amount, date)) {
+        saveTrans(
+            amount: amount,
+            mobile: mobile,
+            color: '#006600',
+            date: date,
+            type: type,
+            serviceName: serviceName,
+            sms: sms);
+      } else {
+        // unsaved transactions collections
+        unsaved(sms: sms, SmsDate: smsDate);
+      }
     } else if (sms.contains('Received from')) {
-      // received english evc from normal number
-      //String test = '[-EVCPlus-] \$40 Received from  0611381010 at 21/11/22 19:51:38, Your balance is \$42.01';
+      // received   evc from normal number
       dynamic me = sms.split(" ");
       dynamic amount = me[1].replaceAll(',', '').replaceAll('\$', '');
       dynamic mobile = me[4];

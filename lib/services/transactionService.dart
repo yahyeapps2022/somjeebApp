@@ -179,7 +179,7 @@ class AutoCreateTrans {
 
   forSahal(sms, smsDate) {}
 
-  addTrans(String sms, smsDate) {
+  addTrans(sms, smsDate) {
     if (sms.contains('EVCPlus')) {
       forEvcPlus(sms, smsDate);
     } else if (sms.contains('sahal')) {
@@ -189,8 +189,7 @@ class AutoCreateTrans {
 
 // only run when the app is lounched
   readImbox(currentSms, smsDate) async {
-    if (currentSms.contains('EVCPlus')) {
-      print('is evc');
+    if (currentSms.contains('EVCPlus') || currentSms.contains('sahal')) {
       final snapShot = await transCollection
           .where('sms', isEqualTo: currentSms)
           .where('uid', isEqualTo: "/users/$uid")
@@ -209,7 +208,7 @@ class AutoCreateTrans {
 
     for (var i = 0; i < messages.length; i++) {
       // TO DO
-      readImbox(messages[i].body, messages[i].date);
+      addTrans(messages[i].body.toString(), messages[i].date.toString());
     }
   }
 

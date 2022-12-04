@@ -18,35 +18,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await FlutterFlowTheme.initialize();
-  var s = AutoCreateTrans();
-/* 
-  var transfaterd = s.readImbox(
-      '[-EVCPlus-] You have successfully transferred \$500 to 0611345804 at 22/11/22 17:21:21, Your Balance is \$19.26.',
-      '22/11/22 ');
 
-  var paid = s.readImbox(
-      '[-EVCPlus-] You have paid  \$2000.5 to SAxaaba modern Pharma(600399),Tel: +252613405050, at 21/11/22 22:27:28, Your Balance is \$38.01.',
-      '22/11/22 ');
-  var received = s.readImbox(
-      '[-EVCPlus-] \$1000 Received from 0611381010 at 21/11/22 19:51:38, Your balance is \$42.01',
-      '21/11/22 19:51:38');
-
-  var recharged = s.readImbox(
-      '[-EVCPlus-] You have recharged \$0.25 to 252611541955, Your balance is \$2.01.',
-      '22/11/22 ');
-
-  var unsaved = s.unsaved(
-      sms:
-          '[-EVCPlus-] You have recharged \$0.25 to 252611541955, Your balance is \$2.01.',
-      SmsDate: '22/11/22 ');
-
-// waa intay unsaved ka kudarto becouse waa invalid date and time
-  var conditionTest = s.readImbox(
-      '[-EVCPlus-] You have successfully transferred so \$500 to 0611345804 at oo ay tahay 22/11/22 17:21:21, Your Balance is \$19.26.',
-      '22/11/22 ');
- */
-  s.readImboxSms();
-  s.smsListen();
   runApp(MyApp());
 }
 
@@ -143,8 +115,41 @@ class _NavBarPageState extends State<NavBarPage> {
     _currentPage = widget.page;
   }
 
+  testSms() async {
+    final s = AutoCreateTrans();
+
+    var transfaterd = s.readImbox(
+        '[-EVCPlus-] You have successfully transferred \$500 to 0611345804 at 22/11/22 17:21:21, Your Balance is \$19.26.',
+        '22/11/22 ');
+
+    var paid = s.readImbox(
+        '[-EVCPlus-] You have paid  \$2000.5 to SAxaaba modern Pharma(600399),Tel: +252613405050, at 21/11/22 22:27:28, Your Balance is \$38.01.',
+        '22/11/22 ');
+    var received = s.readImbox(
+        '[-EVCPlus-] \$1000 Received from 0611381010 at 21/11/22 19:51:38, Your balance is \$42.01',
+        '21/11/22 19:51:38');
+
+    var recharged = s.readImbox(
+        '[-EVCPlus-] You have recharged \$0.25 to 252611541955, Your balance is \$2.01.',
+        '22/11/22 ');
+
+    var unsaved = s.unsaved(
+        sms:
+            '[-EVCPlus-] You have recharged \$0.25 to 252611541955, Your balance is \$2.01.',
+        SmsDate: '22/11/22 ');
+
+// waa intay unsaved ka kudarto becouse waa invalid date and time
+    var conditionTest = s.readImbox(
+        '[-EVCPlus-] You have successfully waa mee transferred so \$500 to 0611345804 at oo ay tahay 22/11/22 17:21:21, Your Balance is \$19.26.',
+        '22/11/22');
+
+    s.readImboxSms();
+    s.smsListen();
+  }
+
   @override
   Widget build(BuildContext context) {
+    testSms();
     final tabs = {
       'dashboard': DashboardWidget(),
       'reports': ReportsWidget(),

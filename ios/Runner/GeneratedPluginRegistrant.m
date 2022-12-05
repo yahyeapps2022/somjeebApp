@@ -48,6 +48,18 @@
 @import sign_in_with_apple;
 #endif
 
+#if __has_include(<sms_advanced/UssdAdvancedPlugin.h>)
+#import <sms_advanced/UssdAdvancedPlugin.h>
+#else
+@import sms_advanced;
+#endif
+
+#if __has_include(<sms_receiver/SmsReceiverPlugin.h>)
+#import <sms_receiver/SmsReceiverPlugin.h>
+#else
+@import sms_receiver;
+#endif
+
 #if __has_include(<sqflite/SqflitePlugin.h>)
 #import <sqflite/SqflitePlugin.h>
 #else
@@ -76,6 +88,8 @@
   [FLTPathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTPathProviderPlugin"]];
   [FLTSharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTSharedPreferencesPlugin"]];
   [SignInWithApplePlugin registerWithRegistrar:[registry registrarForPlugin:@"SignInWithApplePlugin"]];
+  [UssdAdvancedPlugin registerWithRegistrar:[registry registrarForPlugin:@"UssdAdvancedPlugin"]];
+  [SmsReceiverPlugin registerWithRegistrar:[registry registrarForPlugin:@"SmsReceiverPlugin"]];
   [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
   [TelephonyPlugin registerWithRegistrar:[registry registrarForPlugin:@"TelephonyPlugin"]];
   [FLTURLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTURLLauncherPlugin"]];

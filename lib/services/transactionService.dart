@@ -1,11 +1,10 @@
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:telephony/telephony.dart';
+import 'package:sms_advanced/sms_advanced.dart';
 
 class AutoCreateTrans {
-  final String? uid =
-      'KfbQt1tuTsJifuUpJQoa'; //FirebaseAuth.instance.currentUser?.uid;
+  final String? uid = FirebaseAuth.instance.currentUser?.uid;
 
   // collection reference
   final CollectionReference transCollection =
@@ -250,29 +249,33 @@ class AutoCreateTrans {
     }
   }
 
- 
+  smsRecieved(currentSms, smsDate) async {
+    if (isMoneyTransaction(currentSms)) {
+      final snapShot = await transCollection
+          .where('sms', isEqualTo: currentSms)
+          .where('uid', isEqualTo: "/users/$uid")
+          .get();
 
-  readImbox() async {
-    final Telephony telephony = Telephony.instance;
-
-    bool? permissionsGranted = await telephony.requestSmsPermissions;
-    if (permissionsGranted == true) {
-      List<SmsMessage> messages = await telephony.getInboxSms();
-      for (var i = 0; i < messages.length; i++) {
-        addTrans(messages[i].body, messages[i].date);
+      if (snapShot.docs.isEmpty) {
+        addTrans(currentSms, smsDate);
       }
     }
   }
 
-  smsListen() {
-    final Telephony telephony = Telephony.instance;
+  readImbox() async {
+    SmsQuery query = new SmsQuery();
+    List<SmsMessage> messages =
+        await query.querySms(kinds: [SmsQueryKind.Inbox]);
 
-    telephony.listenIncomingSms(
-        onNewMessage: (SmsMessage message) {
-          if (isMoneyTransaction(message.body)) {
-            addTrans(message.body, message.date);
-          }
-        },
-        listenInBackground: false);
+    for (var i = 0; i < messages.length; i++) {
+      // TO DO
+      addTrans(messages[i].body.toString(), messages[i].date.toString());
+    }
+  }
+
+  smsListen() {
+    SmsReceiver receiver = new SmsReceiver();
+    receiver.onSmsReceived
+        ?.listen((SmsMessage msg) => smsRecieved(msg.body, msg.date));
   }
 }

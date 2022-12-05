@@ -51,6 +51,16 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin sign_in_with_apple, com.aboutyou.dart_packages.sign_in_with_apple.SignInWithApplePlugin", e);
     }
     try {
+      flutterEngine.getPlugins().add(new com.elyudde.sms_advanced.SmsAdvancedPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin sms_advanced, com.elyudde.sms_advanced.SmsAdvancedPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new com.oval.sms_receiver.SmsReceiverPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin sms_receiver, com.oval.sms_receiver.SmsReceiverPlugin", e);
+    }
+    try {
       flutterEngine.getPlugins().add(new com.tekartik.sqflite.SqflitePlugin());
     } catch(Exception e) {
       Log.e(TAG, "Error registering plugin sqflite, com.tekartik.sqflite.SqflitePlugin", e);

@@ -250,21 +250,9 @@ class AutoCreateTrans {
     }
   }
 
-// only run when the app is lounched
-  readImbox(currentSms, smsDate) async {
-    if (currentSms.contains('EVCPlus') || currentSms.contains('sahal')) {
-      final snapShot = await transCollection
-          .where('sms', isEqualTo: currentSms)
-          .where('uid', isEqualTo: "/users/$uid")
-          .get();
+ 
 
-      if (snapShot == null || !snapShot.docs.isNotEmpty) {
-        addTrans(currentSms, smsDate);
-      }
-    }
-  }
-
-  readImboxSms() async {
+  readImbox() async {
     final Telephony telephony = Telephony.instance;
 
     bool? permissionsGranted = await telephony.requestSmsPermissions;

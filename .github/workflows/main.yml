@@ -17,9 +17,6 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-      - run: cd android 
-      - run: ls android 
-      - run: android/gradlew signingReport
       - run: flutter doctor 
       - run: flutter clean
       - run: flutter pub get

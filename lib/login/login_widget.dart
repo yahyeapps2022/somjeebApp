@@ -80,9 +80,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                 onPressed: () async {
                   GoRouter.of(context).prepareAuthEvent();
                   final user = await signInWithGoogle(context);
-                  if (user == null) {
+                  /*  if (user == null) {
                     return;
-                  }
+                  } */
 
                   context.goNamedAuth('dashboard', mounted);
                 },

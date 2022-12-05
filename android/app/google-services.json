@@ -7,20 +7,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:131989069516:android:972c0843ea4a39a0276c69",
+        "mobilesdk_app_id": "1:131989069516:android:92e7e689c1bdeea6276c69",
         "android_client_info": {
-          "package_name": "com.mycompany.somjeeb"
+          "package_name": "com.yahyeapps.somjeeb"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "131989069516-6lt66j13nbtvccvst3husgpmgcaibc8q.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.mycompany.somjeeb",
-            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
-          }
-        },
         {
           "client_id": "131989069516-io11adf0gm8vf0r7jnq9908d73da99ek.apps.googleusercontent.com",
           "client_type": 3

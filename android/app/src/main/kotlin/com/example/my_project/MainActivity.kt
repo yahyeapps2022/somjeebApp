@@ -1,4 +1,4 @@
-package com.mycompany.somjeeb
+package com.yahyeapps.somjeeb
 
 import io.flutter.embedding.android.FlutterActivity
 

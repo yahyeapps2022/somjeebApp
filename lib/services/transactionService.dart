@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sms_advanced/sms_advanced.dart';
+import 'package:telephony/telephony.dart';
 
 class AutoCreateTrans {
   final String? uid =
@@ -76,6 +76,17 @@ class AutoCreateTrans {
   bool isOtherTelecom(sms) {
     if (sms.contains('Sahal') ||
         sms.contains('Telesom') ||
+        sms.contains("Somnet Telecom")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool isMoneyTransaction(sms) {
+    if (sms.contains('Sahal') ||
+        sms.contains('Telesom') ||
+        sms.contains('EVCPlus') ||
         sms.contains("Somnet Telecom")) {
       return true;
     } else {
@@ -254,19 +265,26 @@ class AutoCreateTrans {
   }
 
   readImboxSms() async {
-    SmsQuery query = new SmsQuery();
-    List<SmsMessage> messages =
-        await query.querySms(kinds: [SmsQueryKind.Inbox]);
+    final Telephony telephony = Telephony.instance;
 
-    for (var i = 0; i < messages.length; i++) {
-      // TO DO
-      addTrans(messages[i].body.toString(), messages[i].date.toString());
+    bool? permissionsGranted = await telephony.requestSmsPermissions;
+    if (permissionsGranted == true) {
+      List<SmsMessage> messages = await telephony.getInboxSms();
+      for (var i = 0; i < messages.length; i++) {
+        addTrans(messages[i].body, messages[i].date);
+      }
     }
   }
 
   smsListen() {
-    SmsReceiver receiver = new SmsReceiver();
-    receiver.onSmsReceived
-        ?.listen((SmsMessage msg) => readImbox(msg.body, msg.date));
+    final Telephony telephony = Telephony.instance;
+
+    telephony.listenIncomingSms(
+        onNewMessage: (SmsMessage message) {
+          if (isMoneyTransaction(message.body)) {
+            addTrans(message.body, message.date);
+          }
+        },
+        listenInBackground: false);
   }
 }

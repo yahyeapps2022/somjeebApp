@@ -12,16 +12,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
-import 'services/transactionService.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await FlutterFlowTheme.initialize();
-  final s = AutoCreateTrans();
 
-  s.readImboxSms();
-  s.smsListen();
   runApp(MyApp());
 }
 

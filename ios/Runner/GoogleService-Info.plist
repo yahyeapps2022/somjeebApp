@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>131989069516-e5k5n6herhoeakpjrlvlq6obcg1on3m8.apps.googleusercontent.com</string>
+	<string>131989069516-n92g2q4ndmoai3p5e8mocmlu3ja2sd6a.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.131989069516-e5k5n6herhoeakpjrlvlq6obcg1on3m8</string>
+	<string>com.googleusercontent.apps.131989069516-n92g2q4ndmoai3p5e8mocmlu3ja2sd6a</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>131989069516-6lt66j13nbtvccvst3husgpmgcaibc8q.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.somjeeb</string>
+	<string>com.yahyeapps.somjeeb</string>
 	<key>PROJECT_ID</key>
 	<string>somjeeb-4fc1b</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:131989069516:ios:c7909fc4808de395276c69</string>
+	<string>1:131989069516:ios:bb3159983df0a315276c69</string>
 </dict>
 </plist>

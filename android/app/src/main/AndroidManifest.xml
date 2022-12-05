@@ -5,6 +5,7 @@
    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
 
+
    <application
         android:label="somjeeb"
         tools:replace="android:label"
@@ -17,7 +18,6 @@
             <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
         </receiver>
-
 
 
         <activity

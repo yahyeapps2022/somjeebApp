@@ -18,8 +18,8 @@ jobs:
         with:
           channel: "stable"
       - run: cd android 
-      - run: ls   
-      - run: ./gradlew signingReport
+      - run: ls android 
+      - run: android/gradlew signingReport
       - run: flutter doctor 
       - run: flutter clean
       - run: flutter pub get

@@ -19,7 +19,7 @@ jobs:
           channel: "stable"
       - run: cd android    
       - run: pwd
-      - run: ./gradlew signingReport
+      - run: /home/runner/work/somjeebApp/somjeebApp/android/gradlew signingReport
       - run: flutter doctor 
       - run: flutter clean
       - run: flutter pub get

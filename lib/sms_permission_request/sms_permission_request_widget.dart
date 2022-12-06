@@ -2,9 +2,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../services/transactionService.dart';
 
 class SmsPermissionRequestWidget extends StatefulWidget {
   const SmsPermissionRequestWidget({Key? key}) : super(key: key);
@@ -51,36 +48,6 @@ class _SmsPermissionRequestWidgetState
                 child: Text(
                   'si ay report kuugu samayso uogolow app ka inay akhriso fariimaha lacagaha aad dirtay iyo kuwa laguusoodiray ',
                   style: FlutterFlowTheme.of(context).subtitle1,
-                ),
-              ),
-              FFButtonWidget(
-                onPressed: () async {
-                  final s = AutoCreateTrans();
-                  s.readImbox();
-                  s.smsListen();
-                  context.goNamed('dashboard');
-                },
-                text: 'Continue',
-                icon: FaIcon(
-                  FontAwesomeIcons.commentSms,
-                  color: Colors.white,
-                ),
-                options: FFButtonOptions(
-                  width: 150,
-                  height: 40,
-                  color: Colors.black,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).subtitle2Family,
-                        color: Colors.white,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).subtitle2Family),
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
             ],

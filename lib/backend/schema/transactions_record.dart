@@ -28,6 +28,20 @@ abstract class TransactionsRecord
 
   DateTime? get date;
 
+  String? get email;
+
+  @BuiltValueField(wireName: 'display_name')
+  String? get displayName;
+
+  @BuiltValueField(wireName: 'photo_url')
+  String? get photoUrl;
+
+  @BuiltValueField(wireName: 'created_time')
+  DateTime? get createdTime;
+
+  @BuiltValueField(wireName: 'phone_number')
+  String? get phoneNumber;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -38,7 +52,11 @@ abstract class TransactionsRecord
     ..serviceProvider = ''
     ..amount = 0.0
     ..type = ''
-    ..status = '';
+    ..status = ''
+    ..email = ''
+    ..displayName = ''
+    ..photoUrl = ''
+    ..phoneNumber = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('transactions');
@@ -71,6 +89,11 @@ Map<String, dynamic> createTransactionsRecordData({
   String? status,
   DocumentReference? uid,
   DateTime? date,
+  String? email,
+  String? displayName,
+  String? photoUrl,
+  DateTime? createdTime,
+  String? phoneNumber,
 }) {
   final firestoreData = serializers.toFirestore(
     TransactionsRecord.serializer,
@@ -83,7 +106,12 @@ Map<String, dynamic> createTransactionsRecordData({
         ..type = type
         ..status = status
         ..uid = uid
-        ..date = date,
+        ..date = date
+        ..email = email
+        ..displayName = displayName
+        ..photoUrl = photoUrl
+        ..createdTime = createdTime
+        ..phoneNumber = phoneNumber,
     ),
   );
 

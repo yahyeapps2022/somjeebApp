@@ -79,6 +79,41 @@ class _$TransactionsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
     }
+    value = object.email;
+    if (value != null) {
+      result
+        ..add('email')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.displayName;
+    if (value != null) {
+      result
+        ..add('display_name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.photoUrl;
+    if (value != null) {
+      result
+        ..add('photo_url')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.createdTime;
+    if (value != null) {
+      result
+        ..add('created_time')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.phoneNumber;
+    if (value != null) {
+      result
+        ..add('phone_number')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -136,6 +171,26 @@ class _$TransactionsRecordSerializer
           result.date = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
           break;
+        case 'email':
+          result.email = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'display_name':
+          result.displayName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'photo_url':
+          result.photoUrl = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'created_time':
+          result.createdTime = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'phone_number':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -167,6 +222,16 @@ class _$TransactionsRecord extends TransactionsRecord {
   @override
   final DateTime? date;
   @override
+  final String? email;
+  @override
+  final String? displayName;
+  @override
+  final String? photoUrl;
+  @override
+  final DateTime? createdTime;
+  @override
+  final String? phoneNumber;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$TransactionsRecord(
@@ -182,6 +247,11 @@ class _$TransactionsRecord extends TransactionsRecord {
       this.status,
       this.uid,
       this.date,
+      this.email,
+      this.displayName,
+      this.photoUrl,
+      this.createdTime,
+      this.phoneNumber,
       this.ffRef})
       : super._();
 
@@ -206,6 +276,11 @@ class _$TransactionsRecord extends TransactionsRecord {
         status == other.status &&
         uid == other.uid &&
         date == other.date &&
+        email == other.email &&
+        displayName == other.displayName &&
+        photoUrl == other.photoUrl &&
+        createdTime == other.createdTime &&
+        phoneNumber == other.phoneNumber &&
         ffRef == other.ffRef;
   }
 
@@ -217,13 +292,25 @@ class _$TransactionsRecord extends TransactionsRecord {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, number.hashCode), sms.hashCode),
-                                serviceProvider.hashCode),
-                            amount.hashCode),
-                        type.hashCode),
-                    status.hashCode),
-                uid.hashCode),
-            date.hashCode),
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc($jc(0, number.hashCode),
+                                                        sms.hashCode),
+                                                    serviceProvider.hashCode),
+                                                amount.hashCode),
+                                            type.hashCode),
+                                        status.hashCode),
+                                    uid.hashCode),
+                                date.hashCode),
+                            email.hashCode),
+                        displayName.hashCode),
+                    photoUrl.hashCode),
+                createdTime.hashCode),
+            phoneNumber.hashCode),
         ffRef.hashCode));
   }
 
@@ -238,6 +325,11 @@ class _$TransactionsRecord extends TransactionsRecord {
           ..add('status', status)
           ..add('uid', uid)
           ..add('date', date)
+          ..add('email', email)
+          ..add('displayName', displayName)
+          ..add('photoUrl', photoUrl)
+          ..add('createdTime', createdTime)
+          ..add('phoneNumber', phoneNumber)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -280,6 +372,26 @@ class TransactionsRecordBuilder
   DateTime? get date => _$this._date;
   set date(DateTime? date) => _$this._date = date;
 
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
+  String? _displayName;
+  String? get displayName => _$this._displayName;
+  set displayName(String? displayName) => _$this._displayName = displayName;
+
+  String? _photoUrl;
+  String? get photoUrl => _$this._photoUrl;
+  set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
+
+  DateTime? _createdTime;
+  DateTime? get createdTime => _$this._createdTime;
+  set createdTime(DateTime? createdTime) => _$this._createdTime = createdTime;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -299,6 +411,11 @@ class TransactionsRecordBuilder
       _status = $v.status;
       _uid = $v.uid;
       _date = $v.date;
+      _email = $v.email;
+      _displayName = $v.displayName;
+      _photoUrl = $v.photoUrl;
+      _createdTime = $v.createdTime;
+      _phoneNumber = $v.phoneNumber;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -330,6 +447,11 @@ class TransactionsRecordBuilder
             status: status,
             uid: uid,
             date: date,
+            email: email,
+            displayName: displayName,
+            photoUrl: photoUrl,
+            createdTime: createdTime,
+            phoneNumber: phoneNumber,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

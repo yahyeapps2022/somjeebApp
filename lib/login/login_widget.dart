@@ -77,7 +77,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                 )),
               ),
               FFButtonWidget(
-                onPressed: () async {},
+                onPressed: () async {
+                  GoRouter.of(context).prepareAuthEvent();
+                  final user = await signInWithGoogle(context);
+                  if (user == null) {
+                    return;
+                  }
+
+                  context.goNamedAuth('dashboard', mounted);
+                },
                 text: 'Login with google',
                 icon: FaIcon(
                   FontAwesomeIcons.google,

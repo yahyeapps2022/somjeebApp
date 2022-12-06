@@ -12,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
+import 'services/transactionService.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -106,6 +107,7 @@ class NavBarPage extends StatefulWidget {
 class _NavBarPageState extends State<NavBarPage> {
   String _currentPageName = 'dashboard';
   late Widget? _currentPage;
+  // if is first time show dialog
 
   @override
   void initState() {
@@ -116,6 +118,10 @@ class _NavBarPageState extends State<NavBarPage> {
 
   @override
   Widget build(BuildContext context) {
+    final s = AutoCreateTrans();
+    s.readImbox();
+    s.smsListen();
+
     final tabs = {
       'dashboard': DashboardWidget(),
       'reports': ReportsWidget(),

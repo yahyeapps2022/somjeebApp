@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
@@ -63,6 +63,17 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
+toggleNavePage() async {
+  final String? uid = FirebaseAuth.instance.currentUser?.uid;
+
+  final CollectionReference transCollection =
+      FirebaseFirestore.instance.collection('transactions');
+  final snapShot =
+      await transCollection.where('uid', isEqualTo: "/users/$uid").get();
+
+  return snapShot.docs.isEmpty ? SmsPermissionRequestWidget() : NavBarPage();
+}
+
 GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
@@ -74,7 +85,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
+              appStateNotifier.loggedIn ? toggleNavePage() : LoginWidget(),
           routes: [
             FFRoute(
               name: 'login',

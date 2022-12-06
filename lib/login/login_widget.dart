@@ -47,7 +47,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(25, 15, 15, 15),
                   child: SelectionArea(
                       child: Text(
-                    'faaiidooyinka app kan waxaa kamida ku ogaan kartaa report ka EVC Plus iyo Sahal ayaad arkaysaa adigoo ukaladooran kartid weekly,monthly and yearly\nwaxayna kuuxayiraysaa lacagaha aad khaladay wayna kusoo xasuusinaysaa.\n',
+                    'faaiidooyinka app kan waxaa kamida ku ogaan kartaa report ka EVC Plus iyo Sahal ayaad arkaysaa adigoo ukaladooran kartid weekly,monthly and yearly \nwaxayna kuuxayiraysaa lacagaha aad khaladay wayna kusoo xasuusinaysaa.\n ',
                     textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).subtitle1.override(
                           fontFamily:

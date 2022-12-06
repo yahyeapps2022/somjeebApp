@@ -58,8 +58,7 @@ class _SmsPermissionRequestWidgetState
                   final s = AutoCreateTrans();
                   s.readImbox();
                   s.smsListen();
-
-                  context.go("/dashboard");
+                  context.goNamed('dashboard');
                 },
                 text: 'Continue',
                 icon: FaIcon(

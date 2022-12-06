@@ -1,8 +1,11 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main.dart';
+import '../custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../services/transactionService.dart';
 
 class SmsPermissionRequestWidget extends StatefulWidget {
   const SmsPermissionRequestWidget({Key? key}) : super(key: key);
@@ -49,7 +52,18 @@ class _SmsPermissionRequestWidgetState
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: FFButtonWidget(
-                        onPressed: () {},
+                        onPressed: () async {
+                          final s = AutoCreateTrans();
+                          s.readImbox();
+                          s.smsListen();
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  NavBarPage(initialPage: 'dashboard'),
+                            ),
+                          );
+                        },
                         text: 'Continue',
                         icon: Icon(
                           Icons.sms,

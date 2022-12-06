@@ -1,9 +1,9 @@
 import '../auth/auth_util.dart';
+import '../components/google_sign_in_button_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -76,39 +76,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                       ),
                 )),
               ),
-              FFButtonWidget(
-                onPressed: () async {
-                  GoRouter.of(context).prepareAuthEvent();
-                  final user = await signInWithGoogle(context);
-                  if (user == null) {
-                    return;
-                  }
-
-                  context.goNamedAuth('dashboard', mounted);
-                },
-                text: 'Login with google',
-                icon: FaIcon(
-                  FontAwesomeIcons.google,
-                  color: Colors.white,
-                ),
-                options: FFButtonOptions(
-                  width: 200,
-                  height: 40,
-                  color: Colors.black,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).subtitle2Family,
-                        color: Colors.white,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).subtitle2Family),
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
               SelectionArea(
                   child: Text(
                 ' ',
@@ -121,6 +88,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                       lineHeight: 5,
                     ),
               )),
+              InkWell(
+                onTap: () async {
+                  final user = await signInWithGoogle(context);
+                  if (user == null) {
+                    return;
+                  }
+                  await Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          NavBarPage(initialPage: 'dashboard'),
+                    ),
+                    (r) => false,
+                  );
+                },
+                child: GoogleSignInButtonWidget(),
+              ),
             ],
           ),
         ),

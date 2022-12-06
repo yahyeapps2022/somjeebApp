@@ -84,7 +84,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                     return;
                   } */
 
-                  context.goNamedAuth('dashboard', mounted);
+                  context.go(
+                      "/dashboard"); // context.goNamedAuth('dashboard', mounted);
                 },
                 text: 'Login with google',
                 icon: FaIcon(

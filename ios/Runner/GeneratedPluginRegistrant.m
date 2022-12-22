@@ -54,22 +54,10 @@
 @import sms_advanced;
 #endif
 
-#if __has_include(<sms_receiver/SmsReceiverPlugin.h>)
-#import <sms_receiver/SmsReceiverPlugin.h>
-#else
-@import sms_receiver;
-#endif
-
 #if __has_include(<sqflite/SqflitePlugin.h>)
 #import <sqflite/SqflitePlugin.h>
 #else
 @import sqflite;
-#endif
-
-#if __has_include(<telephony/TelephonyPlugin.h>)
-#import <telephony/TelephonyPlugin.h>
-#else
-@import telephony;
 #endif
 
 #if __has_include(<url_launcher_ios/FLTURLLauncherPlugin.h>)
@@ -89,9 +77,7 @@
   [FLTSharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTSharedPreferencesPlugin"]];
   [SignInWithApplePlugin registerWithRegistrar:[registry registrarForPlugin:@"SignInWithApplePlugin"]];
   [UssdAdvancedPlugin registerWithRegistrar:[registry registrarForPlugin:@"UssdAdvancedPlugin"]];
-  [SmsReceiverPlugin registerWithRegistrar:[registry registrarForPlugin:@"SmsReceiverPlugin"]];
   [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
-  [TelephonyPlugin registerWithRegistrar:[registry registrarForPlugin:@"TelephonyPlugin"]];
   [FLTURLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTURLLauncherPlugin"]];
 }
 

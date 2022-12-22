@@ -148,6 +148,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  cli_util:
+    dependency: transitive
+    description:
+      name: cli_util
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.5"
   clock:
     dependency: transitive
     description:
@@ -327,7 +334,7 @@ packages:
       name: flutter_launcher_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.3"
+    version: "0.11.0"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
@@ -796,13 +803,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  sms_receiver:
-    dependency: "direct main"
-    description:
-      name: sms_receiver
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.1"
   source_gen:
     dependency: transitive
     description:
@@ -873,13 +873,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0+3"
-  telephony:
-    dependency: "direct main"
-    description:
-      name: telephony
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
   term_glyph:
     dependency: transitive
     description:
